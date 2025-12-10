@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="card shadow-lg mx-auto" style="max-width: 800px; border-radius: 18px;">
+        <div class="card-body p-5">
+
+            <!-- Success Icon -->
+            <div class="text-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="85" height="85" fill="#28a745" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 
+                           0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 
+                           0-1.06 1.06L6.97 11.03a.75.75 0 0 
+                           0 1.079-.02l3.992-4.99a.75.75 0 0 
+                           0-.01-1.05z"/>
+                </svg>
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-center text-success mb-2">Order Placed Successfully!</h1>
+            <p class="text-center text-muted mb-4">
+                Thank you for your purchase. Your order has been received.
+            </p>
+
+            <!-- Order Reference -->
+            <p class="text-center mb-4">
+                <strong>Order Reference:</strong> 
+                <span class="text-primary">#{{ order_id }}</span>
+            </p>
+
+            <hr>
+
+            <!-- Order Summary Table -->
+            <h4 class="mb-3">Order Summary</h4>
+
+            <div class="table-responsive">
+                <table class="table table-bordered align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Product</th>
+                            <th class="text-center">Qty</th>
+                            <th class="text-end">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in items %}
+                        <tr>
+                            <td>{{ item.name }}</td>
+                            <td class="text-center">{{ item.quantity }}</td>
+                            <td class="text-end">${{ item.price }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot class="table-light">
+                        <tr>
+                            <td colspan="2" class="text-end fw-bold">Total:</td>
+                            <td class="text-end fw-bold text-success">${{ total }}</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <hr class="my-4">
+
+            <!-- Additional Text -->
+            <p class="text-center text-muted mb-4">
+                A confirmation email has been sent to you.  
+                Your order will be packed and shipped soon.
+            </p>
+
+            <!-- Buttons -->
+            <div class="text-center">
+                <a href="/" class="btn btn-primary btn-lg px-4">Continue Shopping</a>
+                <a href="{{ url_for('orderdetails') }}">Order Details</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

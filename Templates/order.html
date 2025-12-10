@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container py-5">
+    <h2 class="mb-4">My Orders</h2>
+
+    {% if orders %}
+    <div class="list-group">
+        {% for order in orders %}
+        <div class="list-group-item py-3">
+            <h5 class="mb-2">
+                Order #{{ order.order_id }}
+            </h5>
+
+            <p class="text-muted">Placed: {{ order.created_at }}</p>
+
+            <p><strong>Total: ${{ order.total }}</strong></p>
+
+            <a href="/orderdetails" class="btn btn-outline-primary btn-sm">
+                View Details
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p class="text-muted">You have no past orders.</p>
+    {% endif %}
+</div>
+
+{% endblock %}

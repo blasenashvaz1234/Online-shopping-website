@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Your Cart</h2>
+
+{% if items and items|length > 0 %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th style="width:140px">Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.name }}</td>
+
+            <td>
+                <div class="d-flex align-items-center gap-2">
+                    <a href="/cart/decrease/{{ item.id }}"
+                       class="btn btn-sm btn-outline-secondary">-</a>
+
+                    <span>{{ item.quantity }}</span>
+
+                    <a href="/cart/increase/{{ item.id }}"
+                       class="btn btn-sm btn-outline-secondary">+</a>
+                </div>
+            </td>
+
+            <td>${{ item.price }}</td>
+            <td>${{ item.price * item.quantity }}</td>
+
+            <td>
+                <a href="/remove-from-cart/{{ item.id }}"
+                   class="btn btn-danger btn-sm">Remove</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h3 class="text-end mt-3">Total: ${{ total }}</h3>
+
+<a href="/checkout" class="btn btn-primary btn-lg">Checkout</a>
+
+{% else %}
+<p class="text-muted">Your cart is empty.</p>
+{% endif %}
+
+{% endblock %}

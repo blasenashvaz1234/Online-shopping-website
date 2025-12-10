@@ -1,0 +1,225 @@
+{% extends "layout.html" %}
+
+{% block title %}Welcome to Shopfinity{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section position-relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 500px;">
+    <div class="container py-5">
+        <div class="row align-items-center min-vh-50">
+            <div class="col-lg-6 text-white py-5">
+                <h1 class="display-3 fw-bold mb-4">Discover Your Style</h1>
+                <p class="lead mb-4">Shop the latest trends in fashion, electronics, and home essentials. Quality products at unbeatable prices.</p>
+                <div class="d-flex gap-3">
+                    <a href="/products" class="btn btn-light btn-lg px-4">Shop Now</a>
+                    <a href="/categories" class="btn btn-outline-light btn-lg px-4">Browse Categories</a>
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=600&h=400&fit=crop" alt="Shopping" class="img-fluid rounded-4 shadow-lg">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="text-center p-4">
+                    <div class="feature-icon bg-primary bg-gradient text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                        <i class="bi bi-truck fs-4"></i>
+                    </div>
+                    <h5>Free Shipping</h5>
+                    <p class="text-muted mb-0">On orders over $50</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center p-4">
+                    <div class="feature-icon bg-success bg-gradient text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                        <i class="bi bi-shield-check fs-4"></i>
+                    </div>
+                    <h5>Secure Payment</h5>
+                    <p class="text-muted mb-0">100% secure transactions</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center p-4">
+                    <div class="feature-icon bg-warning bg-gradient text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                        <i class="bi bi-arrow-repeat fs-4"></i>
+                    </div>
+                    <h5>Easy Returns</h5>
+                    <p class="text-muted mb-0">30-day return policy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Categories Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Shop by Category</h2>
+            <p class="text-muted">Find exactly what you're looking for</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="/category/electronics" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100 category-card">
+                        <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=300&h=200&fit=crop" class="card-img-top" alt="Electronics">
+                        <div class="card-body text-center">
+                            <h6 class="card-title mb-0 text-dark">Electronics</h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="/category/fashion" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100 category-card">
+                        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=300&h=200&fit=crop" class="card-img-top" alt="Fashion">
+                        <div class="card-body text-center">
+                            <h6 class="card-title mb-0 text-dark">Fashion</h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="/category/home" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100 category-card">
+                        <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=300&h=200&fit=crop" class="card-img-top" alt="Home & Living">
+                        <div class="card-body text-center">
+                            <h6 class="card-title mb-0 text-dark">Home & Living</h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="/category/beauty" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100 category-card">
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=200&fit=crop" class="card-img-top" alt="Beauty">
+                        <div class="card-body text-center">
+                            <h6 class="card-title mb-0 text-dark">Beauty</h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Products Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Featured Products</h2>
+            <p class="text-muted">Handpicked favorites just for you</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100 product-card">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=300&fit=crop" class="card-img-top" alt="Smart Watch">
+                        <span class="badge bg-danger position-absolute top-0 end-0 m-2">-20%</span>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">Premium Smart Watch</h6>
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="text-warning me-2">★★★★★</div>
+                            <small class="text-muted">(128)</small>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <span class="fw-bold text-primary">$199.99</span>
+                                <small class="text-muted text-decoration-line-through ms-2">$249.99</small>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100 product-card">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop" class="card-img-top" alt="Running Shoes">
+                    <div class="card-body">
+                        <h6 class="card-title">Running Shoes Pro</h6>
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="text-warning me-2">★★★★☆</div>
+                            <small class="text-muted">(89)</small>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="fw-bold text-primary">$129.99</span>
+                            <button class="btn btn-outline-primary btn-sm">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100 product-card">
+                    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=300&h=300&fit=crop" class="card-img-top" alt="Skincare Set">
+                    <div class="card-body">
+                        <h6 class="card-title">Luxury Skincare Set</h6>
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="text-warning me-2">★★★★★</div>
+                            <small class="text-muted">(256)</small>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="fw-bold text-primary">$89.99</span>
+                            <button class="btn btn-outline-primary btn-sm">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100 product-card">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop" class="card-img-top" alt="Headphones">
+                        <span class="badge bg-success position-absolute top-0 end-0 m-2">New</span>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">Wireless Headphones</h6>
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="text-warning me-2">★★★★★</div>
+                            <small class="text-muted">(312)</small>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="fw-bold text-primary">$299.99</span>
+                            <button class="btn btn-outline-primary btn-sm">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="/products" class="btn btn-primary btn-lg px-5">View All Products</a>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center text-white">
+                <h3 class="fw-bold mb-3">Subscribe to Our Newsletter</h3>
+                <p class="mb-4">Get exclusive deals and updates delivered to your inbox</p>
+                <form class="d-flex gap-2 justify-content-center">
+                    <input type="email" class="form-control form-control-lg" placeholder="Enter your email" style="max-width: 300px;">
+                    <button type="submit" class="btn btn-light btn-lg">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.category-card, .product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.category-card:hover, .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+}
+</style>
+{% endblock %}
